@@ -21,7 +21,7 @@ type DFiCleanIPEntry struct {
 	*DFiClientID
 }
 
-func templateTest() {
+func TemplateTest() {
 	DFiClient := DFiClientID{dfinum: "123456"}
 
 	cleanips := DFiCleanIPEntry{"192.168.2.3", &DFiClient}
