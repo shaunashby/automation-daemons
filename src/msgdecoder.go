@@ -29,6 +29,10 @@ func (m *MessageBody) Time() (string) {
 	return m.Timestamp
 }
 
+func (m *MessageBody) Client() (string) {
+	return m.ClientID
+}
+
 type Message struct {
 	Data *MessageBody `json: "data"`
 }
@@ -44,6 +48,6 @@ func main() {
 		panic(err)
 	}
 
-	fmt.Printf("Decoded: TS %s\n",msg.Body().Time())
+	fmt.Printf("Decoded: TS -> \"%s\", Client Ident -> \"%s\"\n",msg.Body().Time(), msg.Body().Client())
 
 }
